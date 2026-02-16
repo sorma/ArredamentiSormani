@@ -1,0 +1,48 @@
+/* terms.module.css */
+
+.termsContainer {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+  }
+  
+  .termsContainer h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .termsContainer h2 {
+    font-size: 2rem;
+    margin-top: 20px;
+    color: #444;
+  }
+  
+  .termsContainer p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  .termsContainer ul {
+    margin-left: 20px;
+  }
+  
+  .termsContainer li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .termsContainer a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  .termsContainer a:hover {
+    text-decoration: underline;
+  }
+  
