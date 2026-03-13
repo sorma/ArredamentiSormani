@@ -1,32 +1,100 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Navbar.module.css';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [showPhone, setShowPhone] = useState(false);
+
+  const closeMenu = () => setIsOpen(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 900) setIsOpen(false);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
-    <header className={styles.navbar}>
-      <div className={styles.logo}>
-        <Link href="/">Arredamenti Sormani</Link>
+    <>
+      <header className={styles.header}>
+        <div className={styles.inner}>
+          <div className={styles.leftArea}>
+            <Link href="/" className={styles.logo} onClick={closeMenu}>
+              <Image
+                src="/images/logo.png"
+                alt="Logo Arredamenti Sormani"
+                width={260}
+                height={78}
+                className={styles.logoImage}
+                priority
+              />
+            </Link>
+          </div>
+
+          <nav className={styles.desktopNav}>
+            <Link href="/" className={styles.navlink}>Home</Link>
+            <Link href="/lavori" className={styles.navlink}>Lavori</Link>
+            <Link href="/contatti" className={styles.navlink}>Contatti</Link>
+          </nav>
+
+          <div className={styles.rightArea}>
+            <button
+              type="button"
+              className={styles.callButton}
+              onClick={() => setShowPhone((prev) => !prev)}
+              aria-label={showPhone ? 'Nascondi numero' : 'Mostra numero'}
+            >
+              <Phone size={18} />
+              <span>{showPhone ? '3358310617' : 'Chiama ora'}</span>
+            </button>
+
+            <button
+              className={styles.toggle}
+              onClick={() => setIsOpen((prev) => !prev)}
+              aria-label={isOpen ? 'Chiudi menu' : 'Apri menu'}
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div className={`${styles.mobilePanel} ${isOpen ? styles.mobilePanelOpen : ''}`}>
+        <button
+          type="button"
+          className={styles.mobileCallButton}
+          onClick={() => setShowPhone((prev) => !prev)}
+        >
+          <Phone size={18} />
+          <span>{showPhone ? '3358310617' : 'Chiama ora'}</span>
+        </button>
+
+        <Link href="/" className={styles.mobileLink} onClick={closeMenu}>
+          Home
+        </Link>
+        <Link href="/lavori" className={styles.mobileLink} onClick={closeMenu}>
+          Lavori
+        </Link>
+        <Link href="/contatti" className={styles.mobileLink} onClick={closeMenu}>
+          Contatti
+        </Link>
       </div>
 
-      <nav className={`${styles.navLinks} ${isOpen ? styles.show : ''}`}>
-        <Link href="/" className={styles.navlink}>Home</Link>
-        <Link href="/lavori" className={styles.navlink}>Lavori</Link>
-        <Link href="/contatti" className={styles.navlink}>Contatti</Link>
-      </nav>
-
-      <button
-        className={styles.toggle}
-        onClick={() => setIsOpen(!isOpen)}
-        aria-label="Toggle menu"
-      >
-        {isOpen ? <X size={28} /> : <Menu size={28} />}
-      </button>
-    </header>
+      {isOpen && (
+        <button
+          className={styles.backdrop}
+          onClick={closeMenu}
+          aria-label="Chiudi menu"
+        />
+      )}
+    </>
   );
 }

@@ -1,91 +1,168 @@
-/* Footer.module.css */
 .footer {
-    background-color: #2c3e50;  /* Colore di sfondo scuro */
-    color: #ecf0f1;  /* Colore del testo chiaro */
-    padding: 20px 30px;
-    font-family: 'Roboto', sans-serif;
+  margin-top: 0;
+  background: #2f241d;
+  color: #fff8f2;
+  border-top: 1px solid rgba(216, 184, 155, 0.08);
+}
+
+
+.inner {
+  width: 100%;
+  padding: 54px 110px 26px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.topGrid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 0.8fr 1fr;
+  gap: 36px;
+  align-items: start;
+}
+
+.brandColumn {
+  max-width: 420px;
+}
+
+.brand {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff8f2;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 14px;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.brand:hover {
+  color: #ead8c6;
+}
+
+.brandText {
+  margin: 0;
+  color: rgba(255, 248, 242, 0.72);
+  line-height: 1.8;
+  font-size: 0.98rem;
+}
+
+.linksColumn,
+.contactColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.columnTitle {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #d8b89b;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footerLink,
+.contactLink {
+  text-decoration: none;
+  color: rgba(255, 248, 242, 0.82);
+  line-height: 1.6;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.footerLink:hover,
+.contactLink:hover {
+  color: #ffffff;
+  transform: translateX(2px);
+}
+
+.contactColumn {
+  gap: 10px;
+}
+
+.bottomBar {
+  margin-top: 34px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 248, 242, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.copy,
+.note {
+  margin: 0;
+  color: rgba(255, 248, 242, 0.6);
+  font-size: 0.92rem;
+}
+
+@media (max-width: 1200px) {
+  .inner {
+    padding: 48px 64px 24px;
   }
-  
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
+
+  .topGrid {
+    grid-template-columns: 1.2fr 1fr 1fr;
   }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+
+  .contactColumn {
+    grid-column: 1 / -1;
   }
-  
-  .logo a {
-    text-decoration: none;
-    color: #ecf0f1;
-    transition: color 0.3s;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    padding: 42px 24px 22px;
   }
-  
-  .logo a:hover {
-    color: #3498db;  /* Colore hover per il logo */
+
+  .topGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
   }
-  
-  .navLinks {
-    display: flex;
-    gap: 20px;
+
+  .brandColumn {
+    max-width: none;
+    grid-column: 1 / -1;
   }
-  
-  .footerLink {
-    color: #ecf0f1;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    margin-top: 64px;
   }
-  
-  .footerLink:hover {
-    color: #3498db;  /* Colore hover per i link */
+
+  .inner {
+    padding: 36px 18px 20px;
   }
-  
-  .location {
-    display: flex;
-    justify-content: center; /* O allinea come preferisci */
-    align-items: center;
+
+  .topGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
-  
-  .locationLink {
-    color: #ecf0f1;  /* Colore bianco per il link della posizione */
-    text-decoration: none;
-    margin: 0 10px; /* Spaziatura dai lati */
-    font-size: 1rem; /* Dimensione del testo */
-    transition: color 0.3s; /* Aggiungi transizione per il colore */
+
+  .bottomBar {
+    margin-top: 28px;
+    padding-top: 16px;
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  .locationLink:hover {
-    color: #3498db;  /* Colore blu al passaggio del mouse */
-    text-decoration: none; /* Nessuna sottolineatura */
+
+  .brand {
+    font-size: 1.32rem;
   }
-  
-  .footerBottom {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.9rem;
+
+  .brandText,
+  .footerLink,
+  .contactLink,
+  .copy,
+  .note {
+    font-size: 0.96rem;
   }
-  
-  .footerBottom p {
-    color: #ccc;  /* Testo copyright in grigio chiaro */
-  }
-  
-  /* Media query per dispositivi mobili */
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .navLinks {
-      margin-top: 20px;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
-  }
-  
+}

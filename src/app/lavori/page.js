@@ -1,13 +1,24 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import styles from './lavori.module.css';
 
-export default function CucinePage() {
-  const cucine = [
+export default function LavoriPage() {
+  const [showPage, setShowPage] = useState(false);
+  const [loadedImages, setLoadedImages] = useState({});
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowPage(true);
+    }, 120);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const lavori = [
     {
       titolo: 'Cucina Moderna',
       descrizione: 'Design innovativo per ambienti dinamici.',
@@ -44,33 +55,53 @@ export default function CucinePage() {
     <>
       <Navbar />
 
-      <main className={styles.container}>
-        <h1 className={styles.title}>I Nostri Lavori</h1>
-        <p className={styles.subtitle}>Scopri le cucine più amate, tra design moderno e funzionalità.</p>
+      <main className={styles.page}>
+        <div
+          className={`${styles.container} ${
+            showPage ? styles.pageVisible : styles.pageHidden
+          }`}
+        >
+          <section className={styles.hero}>
+            <h1 className={styles.title}>
+              Realizzazioni pensate
+              <br />
+              con stile e carattere
+            </h1>
 
-        <div className={styles.grid}>
-          {cucine.map((cucina, index) => (
-            <div className={styles.card} key={index}>
-              <div className={styles.imageWrapper}>
-<Image
-  src={cucina.img}
-  alt={cucina.titolo}
-  width={1200}
-  height={800}
-  unoptimized
-  className={styles.image}
-/>
+            <p className={styles.subtitle}>
+              Una selezione di ambienti progettati per unire estetica,
+              funzionalità e attenzione ai dettagli, con soluzioni capaci di
+              valorizzare davvero ogni spazio.
+            </p>
+          </section>
 
+          <section className={styles.grid}>
+            {lavori.map((lavoro, index) => (
+              <article className={styles.card} key={index}>
+                <div className={styles.imageWrapper}>
+                  <Image
+                    src={lavoro.img}
+                    alt={lavoro.titolo}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    onLoad={() =>
+                      setLoadedImages((prev) => ({ ...prev, [index]: true }))
+                    }
+                    className={`${styles.image} ${
+                      loadedImages[index] ? styles.imgVisible : styles.imgHidden
+                    }`}
+                    style={{ objectFit: 'cover' }}
+                  />
+                  <div className={styles.imageOverlay} />
+                </div>
 
-
-
-              </div>
-              <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>{cucina.titolo}</h3>
-                <p className={styles.cardDesc}>{cucina.descrizione}</p>
-              </div>
-            </div>
-          ))}
+                <div className={styles.cardContent}>
+                  <h3 className={styles.cardTitle}>{lavoro.titolo}</h3>
+                  <p className={styles.cardDesc}>{lavoro.descrizione}</p>
+                </div>
+              </article>
+            ))}
+          </section>
         </div>
       </main>
 
