@@ -14,6 +14,7 @@ export default function ContattiPage() {
     messaggio: '',
   });
 
+  const [acceptPolicy, setAcceptPolicy] = useState(false);
   const [inviato, setInviato] = useState(false);
   const [errore, setErrore] = useState(false);
 
@@ -23,11 +24,24 @@ export default function ContattiPage() {
   }, []);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value, type, checked } = e.target;
+
+    if (type === 'checkbox') {
+      setAcceptPolicy(checked);
+      return;
+    }
+
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!acceptPolicy) {
+      setErrore(true);
+      return;
+    }
+
     setErrore(false);
     setInviato(false);
     setIsSubmitting(true);
@@ -39,12 +53,16 @@ export default function ContattiPage() {
           'Content-Type': 'application/json',
           Accept: 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          accettazione_privacy: acceptPolicy,
+        }),
       });
 
       if (response.ok) {
         setInviato(true);
         setFormData({ nome: '', email: '', messaggio: '' });
+        setAcceptPolicy(false);
       } else {
         setErrore(true);
       }
@@ -65,9 +83,7 @@ export default function ContattiPage() {
         }`}
       >
         <section className={styles.hero}>
-          <h1 className={styles.title}>
-            Parliamo del tuo progetto
-          </h1>
+          <h1 className={styles.title}>Parliamo del tuo progetto</h1>
           <p className={styles.subtitle}>
             Hai un’idea, una richiesta o vuoi fissare un appuntamento in showroom?
             Scrivici e ti risponderemo il prima possibile.
@@ -136,11 +152,35 @@ export default function ContattiPage() {
                   />
                 </div>
 
+                <div className={styles.checkboxGroup}>
+                  <label className={styles.checkboxLabel} htmlFor="acceptPolicy">
+                    <input
+                      id="acceptPolicy"
+                      type="checkbox"
+                      name="acceptPolicy"
+                      checked={acceptPolicy}
+                      onChange={handleChange}
+                      required
+                    />
+                    <span>
+                      Dichiaro di aver letto e accettato i{' '}
+                      <a href="/terms" target="_blank" rel="noopener noreferrer">
+                        Termini e Servizi
+                      </a>{' '}
+                      e l’
+                      <a href="/privacy" target="_blank" rel="noopener noreferrer">
+                        Informativa Privacy
+                      </a>
+                      .
+                    </span>
+                  </label>
+                </div>
+
                 <div className={styles.actions}>
                   <button
                     type="submit"
                     className={styles.submitButton}
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || !acceptPolicy}
                   >
                     {isSubmitting ? 'Invio in corso...' : 'Invia messaggio'}
                   </button>
@@ -148,7 +188,9 @@ export default function ContattiPage() {
 
                 {errore && (
                   <div className={styles.errorBox}>
-                    Si è verificato un errore. Riprova tra qualche istante.
+                    {!acceptPolicy
+                      ? 'Per continuare devi accettare Termini e Servizi e Informativa Privacy.'
+                      : 'Si è verificato un errore. Riprova tra qualche istante.'}
                   </div>
                 )}
               </form>

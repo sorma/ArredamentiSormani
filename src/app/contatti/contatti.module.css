@@ -408,3 +408,35 @@
     width: 100%;
   }
 }
+.checkboxGroup {
+  margin-top: 2px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: #5f5248;
+  cursor: pointer;
+}
+
+.checkboxLabel input {
+  margin-top: 2px;
+  width: 18px;
+  height: 18px;
+  accent-color: #3e3027;
+  flex-shrink: 0;
+}
+
+.checkboxLabel a {
+  color: #2f241d;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.checkboxLabel a:hover {
+  color: #5a4332;
+}
