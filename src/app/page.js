@@ -35,6 +35,7 @@ export default function Home() {
                 alt="Cucina moderna Arredamenti Sormani"
                 fill
                 priority
+                fetchPriority="high"
                 sizes="100vw"
                 className={styles.heroImage}
                 style={{ objectFit: 'cover' }}

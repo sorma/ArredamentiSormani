@@ -2,7 +2,9 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #f6f1ea 0%, #efe7dd 100%);
+  background:
+    radial-gradient(circle at top right, rgba(216, 184, 155, 0.16), transparent 22%),
+    linear-gradient(180deg, #f6f1ea 0%, #efe7dd 100%);
 }
 
 .container {
@@ -24,14 +26,14 @@
 }
 
 .hero {
-  max-width: 920px;
-  margin: 0 auto 52px;
+  max-width: 900px;
+  margin: 0 auto 48px;
   text-align: center;
 }
 
 .title {
-  font-size: clamp(2.6rem, 5vw, 4.9rem);
-  line-height: 0.98;
+  font-size: clamp(2.7rem, 5vw, 5rem);
+  line-height: 0.96;
   color: #2f241d;
   margin: 0 0 18px;
   letter-spacing: -0.05em;
@@ -42,7 +44,7 @@
   max-width: 760px;
   margin: 0 auto;
   color: #6f6258;
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   line-height: 1.85;
 }
 
@@ -50,175 +52,115 @@
   max-width: 1240px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
   gap: 28px;
   align-items: stretch;
 }
 
-.formSection,
+.leftColumn,
 .infoSection {
   min-width: 0;
 }
 
-.formSection {
-  background: rgba(255, 250, 245, 0.88);
+.introCard {
+  background: rgba(255, 250, 245, 0.86);
   border: 1px solid #e3d7cb;
   border-radius: 28px;
   padding: 30px;
   box-shadow: 0 16px 40px rgba(86, 66, 52, 0.08);
-}
-
-.sectionHeader {
   margin-bottom: 24px;
 }
 
-.sectionHeader h2 {
-  font-size: 1.45rem;
+.introCard h2 {
+  margin: 0 0 12px;
+  font-size: 1.75rem;
+  line-height: 1.12;
   color: #2f241d;
-  margin: 0 0 8px;
 }
 
-.sectionHeader p {
-  color: #6a5c52;
-  line-height: 1.65;
+.introCard p {
   margin: 0;
+  color: #6a5c52;
+  line-height: 1.78;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 18px;
 }
 
-.inputGroup {
+.contactCard {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
+  gap: 18px;
+  align-items: flex-start;
+  background: rgba(255, 250, 245, 0.92);
+  border: 1px solid #e3d7cb;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 16px 34px rgba(86, 66, 52, 0.06);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 
-.inputGroup label {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #2f241d;
+.contactCard:hover {
+  transform: translateY(-3px);
+  border-color: #d4bea8;
+  box-shadow: 0 20px 38px rgba(86, 66, 52, 0.1);
 }
 
-.form input,
-.form textarea {
-  width: 100%;
-  border: 1px solid #dccfc2;
-  background: #fffaf5;
-  color: #2f241d;
-  border-radius: 14px;
-  padding: 14px 15px;
-  font-size: 1rem;
-  outline: none;
-  transition:
-    border-color 0.22s ease,
-    box-shadow 0.22s ease,
-    background-color 0.22s ease;
-}
-
-.form input::placeholder,
-.form textarea::placeholder {
-  color: #9b8b7d;
-}
-
-.form input:focus,
-.form textarea:focus {
-  border-color: #b08968;
-  box-shadow: 0 0 0 4px rgba(176, 137, 104, 0.12);
-  background: #ffffff;
-}
-
-.form textarea {
-  resize: vertical;
-  min-height: 160px;
-}
-
-.actions {
-  display: flex;
+.iconWrap {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  display: inline-flex;
   align-items: center;
-  justify-content: flex-start;
-  margin-top: 6px;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(176, 137, 104, 0.12);
+  color: #b08968;
 }
 
-.submitButton,
-.secondaryButton {
-  appearance: none;
-  border: none;
-  border-radius: 14px;
-  padding: 14px 20px;
-  font-size: 0.98rem;
+.iconWrap svg,
+.infoHighlightItem svg,
+.arrow svg {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.cardLabel {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #9c7d63;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   font-weight: 700;
-  cursor: pointer;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background-color 0.2s ease,
-    color 0.2s ease;
 }
 
-.submitButton {
-  background: #3e3027;
-  color: #fff8f2;
-  box-shadow: 0 12px 24px rgba(62, 48, 39, 0.16);
-}
-
-.submitButton:hover:not(:disabled) {
-  transform: translateY(-1px);
-  background: #2f241d;
-  box-shadow: 0 16px 28px rgba(62, 48, 39, 0.2);
-}
-
-.submitButton:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-.secondaryButton {
-  background: #efe3d7;
-  color: #2f241d;
-}
-
-.secondaryButton:hover {
-  background: #e6d6c7;
-  transform: translateY(-1px);
-}
-
-.successBox,
-.errorBox {
-  border-radius: 18px;
-  padding: 18px;
-  line-height: 1.65;
-}
-
-.successBox {
-  background: #f8f2eb;
-  border: 1px solid #e2d1bf;
-  color: #5a4332;
-}
-
-.successBox h3 {
+.contactCard h3 {
   margin: 0 0 8px;
+  font-size: 1.32rem;
   color: #2f241d;
 }
 
-.successBox p {
-  margin: 0 0 16px;
-}
-
-.errorBox {
-  background: #fff4f2;
-  border: 1px solid #f0c9c2;
-  color: #a14a3c;
+.contactCard p {
+  margin: 0;
+  color: #6a5c52;
+  line-height: 1.7;
+  font-size: 1rem;
 }
 
 .infoCard {
   height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: linear-gradient(145deg, #3a2c23 0%, #2f241d 100%);
   color: #fff8f2;
   border-radius: 28px;
-  padding: 30px;
+  padding: 32px;
   box-shadow: 0 22px 52px rgba(62, 48, 39, 0.18);
   position: relative;
   overflow: hidden;
@@ -250,74 +192,52 @@
 }
 
 .infoCard h2 {
-  font-size: 1.8rem;
+  font-size: 1.95rem;
   margin: 0 0 12px;
-  line-height: 1.15;
+  line-height: 1.1;
 }
 
-.infoCard p {
+.infoText {
+  margin: 0 0 24px;
   color: rgba(255, 248, 242, 0.82);
-  line-height: 1.72;
+  line-height: 1.78;
 }
 
-.infoList {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-  margin: 28px 0;
-}
-
-.infoItem {
-  display: flex;
+.infoHighlight {
+  display: grid;
   gap: 14px;
-  align-items: flex-start;
+  margin-bottom: 28px;
 }
 
-.infoIcon {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  display: inline-flex;
+.infoHighlightItem {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  background: rgba(255, 248, 242, 0.08);
-  flex-shrink: 0;
-  font-size: 1rem;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255, 248, 242, 0.07);
+  border: 1px solid rgba(255, 248, 242, 0.08);
+  color: rgba(255, 248, 242, 0.9);
 }
 
-.infoItem strong {
-  display: block;
-  margin-bottom: 4px;
-  color: #ffffff;
-}
-
-.infoItem p {
-  margin: 0;
-}
-
-.infoItem a {
-  color: #f4e3d3;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.infoItem a:hover {
-  color: #ffffff;
+.infoHighlightItem svg {
+  color: #d8b89b;
 }
 
 .infoActions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .primaryLink,
 .secondaryLink {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  min-height: 48px;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 52px;
   padding: 0 18px;
   border-radius: 14px;
   text-decoration: none;
@@ -332,6 +252,7 @@
 .primaryLink {
   background: #fff8f2;
   color: #2f241d;
+  flex: 1;
 }
 
 .primaryLink:hover {
@@ -343,11 +264,20 @@
   border: 1px solid rgba(255, 248, 242, 0.18);
   color: #fff8f2;
   background: rgba(255, 248, 242, 0.06);
+  flex: 1;
 }
 
 .secondaryLink:hover {
   transform: translateY(-1px);
   background: rgba(255, 248, 242, 0.12);
+}
+
+.arrow {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 1200px) {
@@ -391,10 +321,15 @@
     line-height: 1.72;
   }
 
-  .formSection,
+  .introCard,
+  .contactCard,
   .infoCard {
     padding: 22px;
     border-radius: 22px;
+  }
+
+  .contactCard {
+    gap: 14px;
   }
 
   .infoActions {
@@ -402,41 +337,43 @@
   }
 
   .primaryLink,
-  .secondaryLink,
-  .submitButton,
-  .secondaryButton {
+  .secondaryLink {
     width: 100%;
   }
 }
-.checkboxGroup {
-  margin-top: 2px;
+.infoNote {
+  margin: 26px 0 22px;
+  padding: 18px 18px;
+  border-radius: 18px;
+  background: rgba(255, 248, 242, 0.06);
+  border: 1px solid rgba(255, 248, 242, 0.08);
 }
 
-.checkboxLabel {
-  display: flex;
-  align-items: flex-start;
+.infoNote p {
+  margin: 0;
+  color: rgba(255, 248, 242, 0.9);
+  line-height: 1.78;
+}
+
+.infoFeatures {
+  display: grid;
   gap: 12px;
-  font-size: 0.94rem;
-  line-height: 1.6;
-  color: #5f5248;
-  cursor: pointer;
+  margin-bottom: 26px;
 }
 
-.checkboxLabel input {
-  margin-top: 2px;
-  width: 18px;
-  height: 18px;
-  accent-color: #3e3027;
+.infoFeature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(255, 248, 242, 0.88);
+  font-size: 0.98rem;
+}
+
+.featureDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #d8b89b;
+  box-shadow: 0 0 0 6px rgba(216, 184, 155, 0.1);
   flex-shrink: 0;
-}
-
-.checkboxLabel a {
-  color: #2f241d;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
-
-.checkboxLabel a:hover {
-  color: #5a4332;
 }

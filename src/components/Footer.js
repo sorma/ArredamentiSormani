@@ -4,7 +4,7 @@ import styles from './Footer.module.css';
 export default function Footer() {
   const address = 'Asso, Via Circonvallazione 14';
   const phone = '3358310617';
-  const googleMapsUrl = `https://www.google.com/maps/place/${encodeURIComponent(address)}`;
+  const googleMapsUrl = `https://www.google.com/maps/place/Arredamenti+Sormani/@45.8635949,9.2733752,17z/data=!4m6!3m5!1s0x47841e510de4e4b3:0xf1bf11f74e023c0!8m2!3d45.8635912!4d9.2759501!16s%2Fg%2F1tdnvry2?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D`;
   const telUrl = `tel:${phone}`;
 
   return (

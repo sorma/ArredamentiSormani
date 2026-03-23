@@ -1,69 +1,128 @@
-// src/app/terms/page.js
-
 import React from 'react';
-import styles from './terms.module.css';  // Importa il modulo CSS specifico per i Termini
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import styles from './terms.module.css';
 
-export default function TermsAndConditions() {
+export default function TermsPage() {
   return (
-    <div className={styles.termsContainer}>
-      <h1>Termini e Condizioni</h1>
-      <p>Ultimo aggiornamento: Aprile 2025</p>
+    <>
+      <Navbar />
 
-      <p>
-        Benvenuto nel sito web Arredamenti Sormani. Laccesso e lutilizzo di questo sito sono
-        soggetti ai seguenti Termini e Condizioni. Ti invitiamo a leggere attentamente queste
-        condizioni prima di utilizzare il sito.
-      </p>
+      <main className={styles.page}>
+        <div className={styles.container}>
+          <section className={styles.hero}>
+            <h1 className={styles.title}>Termini e Condizioni</h1>
+            <p className={styles.updated}>Ultimo aggiornamento: Marzo 2026</p>
+            <p className={styles.subtitle}>
+              I presenti Termini e Condizioni disciplinano l’accesso e l’utilizzo
+              del sito web di Arredamenti Sormani.
+            </p>
+          </section>
 
-      <h2>1. Accettazione dei Termini</h2>
-      <p>
-        Utilizzando il nostro sito web, accetti i presenti Termini e Condizioni. Se non accetti questi
-        Termini, ti preghiamo di non utilizzare il nostro sito.
-      </p>
+          <section className={styles.content}>
+            <section className={styles.card}>
+              <h2>1. Oggetto</h2>
+              <p>
+                Il sito ha finalità esclusivamente informative e di presentazione
+                dei servizi e delle realizzazioni di Arredamenti Sormani.
+              </p>
+              <p>
+                La navigazione del sito implica l’accettazione delle presenti
+                condizioni d’uso.
+              </p>
+            </section>
 
-      <h2>2. Modifiche ai Termini</h2>
-      <p>
-        Ci riserviamo il diritto di modificare, aggiornare o cambiare questi Termini e Condizioni in qualsiasi momento.
-        Le modifiche verranno pubblicate su questa pagina con la data di aggiornamento. Ti invitiamo a
-        controllare regolarmente questa pagina per verificare eventuali modifiche.
-      </p>
+            <section className={styles.card}>
+              <h2>2. Utilizzo del sito</h2>
+              <p>
+                L’utente si impegna a utilizzare il sito in modo lecito, corretto
+                e conforme alla normativa applicabile.
+              </p>
+              <p>
+                Non è consentito utilizzare il sito per attività che possano
+                comprometterne il funzionamento, la sicurezza o i contenuti.
+              </p>
+            </section>
 
-      <h2>3. Proprietà Intellettuale</h2>
-      <p>
-        Tutti i contenuti, compresi testi, immagini, grafica, loghi, video e software, sono di proprietà di
-        Arredamenti Sormani o dei rispettivi proprietari dei diritti dautore. Non è consentito copiare, riprodurre,
-        distribuire o pubblicare i contenuti senza il nostro esplicito consenso.
-      </p>
+            <section className={styles.card}>
+              <h2>3. Proprietà intellettuale</h2>
+              <p>
+                Testi, immagini, loghi, elementi grafici e contenuti presenti sul
+                sito sono riservati e, salvo diversa indicazione, appartengono ad
+                Arredamenti Sormani o ai rispettivi titolari dei diritti.
+              </p>
+              <p>
+                Non è consentita la copia, riproduzione, distribuzione o riutilizzo
+                dei contenuti senza preventiva autorizzazione scritta.
+              </p>
+            </section>
 
-      <h2>4. Uso del Sito</h2>
-      <p>
-        Accetti di utilizzare il nostro sito solo per scopi leciti e in modo da non violare i diritti di altri utenti.
-        Non è consentito caricare contenuti dannosi, offensivi o illegali.
-      </p>
+            <section className={styles.card}>
+              <h2>4. Accuratezza delle informazioni</h2>
+              <p>
+                Arredamenti Sormani si impegna a mantenere aggiornate e corrette
+                le informazioni pubblicate sul sito.
+              </p>
+              <p>
+                Tuttavia, i contenuti hanno finalità informativa e possono essere
+                modificati, aggiornati o rimossi in qualsiasi momento senza preavviso.
+              </p>
+            </section>
 
-      <h2>5. Limitazione di Responsabilità</h2>
-      <p>
-        Arredamenti Sormani non si assume alcuna responsabilità per danni diretti o indiretti derivanti
-        dalluso del nostro sito web, inclusi errori, interruzioni o virus informatici. Utilizzi il nostro sito
-        a tuo rischio.
-      </p>
+            <section className={styles.card}>
+              <h2>5. Link esterni</h2>
+              <p>
+                Il sito può contenere collegamenti a pagine o servizi esterni,
+                come ad esempio mappe o altri siti di terzi.
+              </p>
+              <p>
+                Arredamenti Sormani non è responsabile dei contenuti, della
+                disponibilità o delle politiche adottate da tali siti esterni.
+              </p>
+            </section>
 
-      <h2>6. Link a Siti di Terzi</h2>
-      <p>
-        Il nostro sito può contenere link a siti web di terzi. Non siamo responsabili per i contenuti o le
-        pratiche di privacy di questi siti esterni.
-      </p>
+            <section className={styles.card}>
+              <h2>6. Limitazione di responsabilità</h2>
+              <p>
+                Nei limiti consentiti dalla legge, Arredamenti Sormani non potrà
+                essere ritenuta responsabile per danni derivanti dall’uso del sito,
+                da eventuali interruzioni del servizio o da errori presenti nei contenuti.
+              </p>
+            </section>
 
-      <h2>7. Legge Applicabile</h2>
-      <p>
-        I presenti Termini e Condizioni sono regolati dalla legge italiana. In caso di controversie, sarà competente
-        il foro di Milano, Italia.
-      </p>
+            <section className={styles.card}>
+              <h2>7. Modifiche ai termini</h2>
+              <p>
+                Arredamenti Sormani si riserva il diritto di modificare in qualsiasi
+                momento i presenti Termini e Condizioni.
+              </p>
+              <p>
+                Le eventuali modifiche saranno efficaci dalla data di pubblicazione
+                su questa pagina.
+              </p>
+            </section>
 
-      <h2>8. Contatti</h2>
-      <p>
-        Per domande o chiarimenti sui Termini e Condizioni, puoi contattarci allindirizzo email: <strong>info@arredamentisormani.it</strong>
-      </p>
-    </div>
+            <section className={styles.card}>
+              <h2>8. Legge applicabile</h2>
+              <p>
+                I presenti Termini e Condizioni sono regolati dalla legge italiana,
+                salvo diversa disposizione inderogabile di legge.
+              </p>
+            </section>
+
+            <section className={styles.card}>
+              <h2>9. Contatti</h2>
+              <p>
+                Per informazioni relative a questi Termini e Condizioni è possibile
+                contattare Arredamenti Sormani tramite i recapiti indicati nella
+                pagina Contatti del sito.
+              </p>
+            </section>
+          </section>
+        </div>
+      </main>
+
+      <Footer />
+    </>
   );
 }
