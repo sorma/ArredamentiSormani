@@ -20,36 +20,37 @@ export default function LavoriPage() {
 
   const lavori = [
     {
-      titolo: 'Cucina Moderna',
-      descrizione: 'Design innovativo per ambienti dinamici.',
+      titolo: 'Armadio su misura',
+      descrizione: 'Soluzione progettata per organizzare lo spazio con ordine e pulizia visiva.',
       img: '/images/image0.webp',
     },
     {
-      titolo: 'Cucina Classica',
-      descrizione: 'Eleganza senza tempo e materiali pregiati.',
+      titolo: 'Camera con armadiatura',
+      descrizione: 'Composizione elegante con armadi integrati e linee essenziali.',
       img: '/images/image1.jpeg',
     },
     {
-      titolo: 'Cucina Minimal',
-      descrizione: 'Linee pulite e colori neutri.',
+      titolo: 'Armadio con libreria',
+      descrizione: 'Progetto funzionale che unisce contenimento e vani a giorno.',
       img: '/images/image2.jpeg',
     },
     {
-      titolo: 'Cucina Rustica',
-      descrizione: 'Legno naturale e atmosfera calda.',
+      titolo: 'Parete attrezzata',
+      descrizione: 'Mobile su misura pensato per arredare la zona giorno con equilibrio.',
       img: '/images/image3.jpeg',
     },
     {
-      titolo: 'Cucina con Isola',
-      descrizione: 'Perfetta per cucinare e socializzare.',
+      titolo: 'Cucina con penisola',
+      descrizione: 'Una soluzione pratica e conviviale, ideale per l’ambiente quotidiano.',
       img: '/images/image4.jpeg',
     },
     {
-      titolo: 'Cucina Open Space',
-      descrizione: 'Integrazione perfetta con il soggiorno.',
+      titolo: 'Cucina lineare moderna',
+      descrizione: 'Composizione dal carattere contemporaneo, essenziale e ben organizzata.',
       img: '/images/image5.jpeg',
     },
   ];
+
 
   return (
     <>
