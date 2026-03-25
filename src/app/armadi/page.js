@@ -2,13 +2,52 @@
 
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import styles from './armadi.module.css';
 
+function IconCatalogo() {
+  return (
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+      <line x1="9" y1="7" x2="15" y2="7" />
+      <line x1="9" y1="11" x2="13" y2="11" />
+    </svg>
+  );
+}
+
+function IconContatti() {
+  return (
+    <svg
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+    </svg>
+  );
+}
+
 export default function ArmadiPage() {
   const [showPage, setShowPage] = useState(false);
-  const [loadedImages, setLoadedImages] = useState({});
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -18,36 +57,105 @@ export default function ArmadiPage() {
     return () => clearTimeout(timer);
   }, []);
 
-  const armadi = [
+  const brandSections = [
     {
-      titolo: 'Armadio Spazioso',
-      descrizione: 'Ampio spazio per organizzare ogni cosa con stile.',
-      img: '/images/armadio1.webp',
+      nome: 'Elli',
+      logo: '/images/Elli.png',
+      alt: 'Logo Elli',
+      testo1:
+        'Elli progetta e produce arredi eleganti e senza tempo, con una proposta capace di valorizzare la zona notte attraverso soluzioni raffinate, pulite e coerenti.',
+      testo2:
+        'Il sistema armadi Elli evolve costantemente con nuove soluzioni estetiche e funzionali, grazie a una struttura modulare pensata per offrire grande flessibilità progettuale.',
+      punti: [
+        'Arredi eleganti e senza tempo',
+        'Flessibilità progettuale',
+        'Struttura modulare',
+        'Ricerca estetica e funzionale',
+      ],
+      stats: [
+        { valore: 'Zona notte', label: 'Progettata con eleganza e ordine' },
+        { valore: 'Modulare', label: 'Sistema adattabile agli spazi' },
+        { valore: 'Su misura', label: 'Soluzioni flessibili e personalizzabili' },
+        { valore: 'Ricercato', label: 'Stile sobrio e ben definito' },
+      ],
+      nota: 'La proposta Elli si distingue per un equilibrio tra estetica, funzionalità e continuità stilistica, ideale per chi cerca armadiature eleganti e ben integrate nell\'ambiente.',
+      linkBrand: 'https://www.ellifratelli.com/portfolio-item/armadio/',
+      cataloghi: [
+        {
+          titolo: 'Collezione Armadi',
+          descrizione:
+            'Sfoglia la proposta completa Elli per la zona notte: ante piane, scorrevoli, cabine armadio e soluzioni interne.',
+          link: 'https://www.ellifratelli.com/portfolio-item/armadio/',
+          esterno: true,
+          icona: 'catalogo',
+        },
+        {
+          titolo: 'Richiedi il catalogo',
+          descrizione:
+            'Passa in showroom o contattaci per ricevere il catalogo aggiornato e scoprire tutte le finiture disponibili.',
+          link: '/contatti',
+          esterno: false,
+          icona: 'contatti',
+        },
+      ],
     },
     {
-      titolo: 'Cabina Armadio Elegante',
-      descrizione: 'Un tocco di lusso per la tua camera da letto.',
-      img: '/images/armadio2.webp',
-    },
-    {
-      titolo: 'Armadio Scorrevole',
-      descrizione: 'Design moderno e pratico per spazi ridotti.',
-      img: '/images/armadio3.webp',
-    },
-    {
-      titolo: 'Armadio su Misura',
-      descrizione: 'Personalizzabile in ogni dettaglio.',
-      img: '/images/armadio4.webp',
-    },
-    {
-      titolo: 'Armadio Classico',
-      descrizione: 'Eleganza tradizionale che non passa mai di moda.',
-      img: '/images/armadio5.webp',
-    },
-    {
-      titolo: 'Armadio a Specchio',
-      descrizione: 'Perfetto per ampliare visivamente gli spazi.',
-      img: '/images/armadio6.webp',
+      nome: 'Battistella',
+      logo: '/images/Battistella.webp',
+      alt: 'Logo Battistella',
+      testo1:
+        'Battistella Company rappresenta una realtà strutturata dell\'arredo italiano, con un approccio progettuale articolato in più brand e una presenza internazionale consolidata.',
+      testo2:
+        'Il gruppo si presenta con tre proposte — Novamobili, Nidi e Cinquanta3 — offrendo una visione contemporanea dell\'abitare che risulta credibile, ordinata e ben riconoscibile anche nella zona notte.',
+      punti: [
+        'Gruppo d\'arredo strutturato',
+        'Tre brand distinti',
+        'Distribuzione internazionale',
+        'Visione contemporanea dell\'abitare',
+      ],
+      stats: [
+        { valore: '3 brand', label: 'Novamobili, Nidi e Cinquanta3' },
+        { valore: '40+', label: 'Paesi raggiunti nel mondo' },
+        { valore: 'Design', label: 'Approccio attuale e coordinato' },
+        { valore: 'Affidabilità', label: 'Struttura solida e riconoscibile' },
+      ],
+      nota: 'Battistella porta nella zona notte una proposta contemporanea e ben organizzata, adatta a chi desidera soluzioni funzionali, coerenti e capaci di dialogare con il resto della casa.',
+      linkBrand: 'https://www.battistellacompany.it/it/brand',
+      cataloghi: [
+        {
+          titolo: 'Novamobili',
+          descrizione:
+            'Soluzioni contemporanee per armadi e zona notte, con un\'identità design chiara e ben riconoscibile.',
+          link: 'https://www.novamobili.it',
+          esterno: true,
+          icona: 'catalogo',
+        },
+        {
+          titolo: 'Nidi',
+          descrizione:
+            'Proposte fresche e funzionali per gli spazi più giovani, con un approccio colorato e attento alla praticità.',
+          link: 'https://www.nidi.it',
+          esterno: true,
+          icona: 'catalogo',
+        },
+        {
+          titolo: 'Cinquanta3',
+          descrizione:
+            'Una linea sofisticata e contemporanea che interpreta l\'arredo italiano con uno stile essenziale e ben curato.',
+          link: 'https://www.cinquanta3.it',
+          esterno: true,
+          icona: 'catalogo',
+        },
+        {
+          titolo: 'Richiedi informazioni',
+          descrizione:
+            'Contattaci per ricevere materiali aggiornati, scoprire le finiture disponibili e avviare un progetto personalizzato.',
+          link: '/contatti',
+          esterno: false,
+          icona: 'contatti',
+        },
+      ],
+
     },
   ];
 
@@ -55,7 +163,7 @@ export default function ArmadiPage() {
     <>
       <Navbar />
 
-      <main className={styles.page}>
+      <main className={styles.pageWrapper}>
         <div
           className={`${styles.container} ${
             showPage ? styles.pageVisible : styles.pageHidden
@@ -74,35 +182,156 @@ export default function ArmadiPage() {
             </p>
           </section>
 
-          <section className={styles.grid}>
-            {armadi.map((armadio, index) => (
-              <article className={styles.card} key={index}>
-                <div className={styles.imageWrapper}>
+          {brandSections.map((brand) => (
+            <section className={styles.brandSection} key={brand.nome}>
+              <div className={styles.brandIntro}>
+                <div className={styles.brandLogoWrap}>
                   <Image
-                    src={armadio.img}
-                    alt={armadio.titolo}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    priority={index === 0}
-                    fetchPriority={index === 0 ? 'high' : 'auto'}
-                    onLoad={() =>
-                      setLoadedImages((prev) => ({ ...prev, [index]: true }))
-                    }
-                    className={`${styles.image} ${
-                      loadedImages[index] ? styles.imgVisible : styles.imgHidden
-                    }`}
-                    style={{ objectFit: 'cover' }}
+                    src={brand.logo}
+                    alt={brand.alt}
+                    width={170}
+                    height={170}
+                    className={styles.brandLogo}
+                    priority={brand.nome === 'Elli'}
                   />
-                  <div className={styles.imageOverlay} />
                 </div>
 
-                <div className={styles.cardContent}>
-                  <h3 className={styles.cardTitle}>{armadio.titolo}</h3>
-                  <p className={styles.cardDesc}>{armadio.descrizione}</p>
+                <div className={styles.brandContent}>
+                  <span className={styles.brandEyebrow}>Brand partner</span>
+
+                  <h2 className={styles.brandTitle}>{brand.nome}</h2>
+
+                  <p className={styles.brandText}>{brand.testo1}</p>
+                  <p className={styles.brandText}>{brand.testo2}</p>
+
+                  <div className={styles.featureList}>
+                    {brand.punti.map((item) => (
+                      <div key={item} className={styles.featureItem}>
+                        <span className={styles.featureDot} />
+                        <span>{item}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className={styles.brandActions}>
+                    <Link href="/contatti" className={styles.primaryLink}>
+                      Richiedi una consulenza
+                    </Link>
+
+                    <a
+                      href={brand.linkBrand}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={styles.secondaryLink}
+                    >
+                      Scopri il brand
+                    </a>
+                  </div>
                 </div>
-              </article>
-            ))}
-          </section>
+              </div>
+
+              <div className={styles.brandStats}>
+                {brand.stats.map((item) => (
+                  <div key={item.label} className={styles.statCard}>
+                    <span className={styles.statValue}>{item.valore}</span>
+                    <span className={styles.statLabel}>{item.label}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className={styles.brandNote}>
+                <p>{brand.nota}</p>
+              </div>
+
+              <div className={styles.catalogSection}>
+                <h3 className={styles.catalogHeading}>Collezioni e contatti</h3>
+
+                <div className={styles.catalogGrid}>
+                  {brand.cataloghi.map((cat) =>
+                    cat.esterno ? (
+                      <a
+                        key={cat.titolo}
+                        href={cat.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={styles.catalogCard}
+                      >
+                        <div className={styles.catalogIcon}>
+                          {cat.icona === 'contatti' ? (
+                            <IconContatti />
+                          ) : (
+                            <IconCatalogo />
+                          )}
+                        </div>
+
+                        <div className={styles.catalogBody}>
+                          <span className={styles.catalogBrand}>{brand.nome}</span>
+                          <h4 className={styles.catalogTitle}>{cat.titolo}</h4>
+                          <p className={styles.catalogDesc}>{cat.descrizione}</p>
+                        </div>
+
+                        <div className={styles.catalogFooter}>
+                          <span className={styles.catalogCta}>
+                            Scopri
+                            <svg
+                              width="14"
+                              height="14"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              aria-hidden="true"
+                            >
+                              <path d="M7 17L17 7" />
+                              <path d="M7 7h10v10" />
+                            </svg>
+                          </span>
+                        </div>
+                      </a>
+                    ) : (
+                      <Link
+                        key={cat.titolo}
+                        href={cat.link}
+                        className={`${styles.catalogCard} ${styles.catalogCardAccent}`}
+                      >
+                        <div className={`${styles.catalogIcon} ${styles.catalogIconAccent}`}>
+                          <IconContatti />
+                        </div>
+
+                        <div className={styles.catalogBody}>
+                          <span className={styles.catalogBrand}>{brand.nome}</span>
+                          <h4 className={styles.catalogTitle}>{cat.titolo}</h4>
+                          <p className={styles.catalogDesc}>{cat.descrizione}</p>
+                        </div>
+
+                        <div className={styles.catalogFooter}>
+                          <span className={`${styles.catalogCta} ${styles.catalogCtaAccent}`}>
+                            Contattaci
+                            <svg
+                              width="14"
+                              height="14"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              aria-hidden="true"
+                            >
+                              <path d="M5 12h14" />
+                              <path d="M12 5l7 7-7 7" />
+                            </svg>
+                          </span>
+                        </div>
+                      </Link>
+                    )
+                  )}
+                </div>
+              </div>
+            </section>
+          ))}
         </div>
       </main>
 
