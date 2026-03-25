@@ -28,7 +28,7 @@ export default function ProdottiPage() {
       brands: [
         {
           nome: 'Arredo3',
-          logo: '/images/Arredotre.webp',
+          logo: '/images/Arredo3.webp',
         },
       ],
     },
@@ -41,7 +41,7 @@ export default function ProdottiPage() {
       brands: [
         {
           nome: 'Elli',
-          logo: '/images/Elli.png',
+          logo: '/images/Elli.webp',
         },
         {
           nome: 'Battistella',
@@ -58,7 +58,7 @@ export default function ProdottiPage() {
       brands: [
         {
           nome: 'Solid Top',
-          logo: '/images/SolidTop.webp',
+          logo: '/images/Solidtop.webp',
         },
         {
           nome: 'Vallmar',

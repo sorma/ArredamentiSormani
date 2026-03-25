@@ -117,7 +117,7 @@ export default function CucinePage() {
             <div className={styles.brandIntro}>
               <div className={styles.brandLogoWrap}>
                 <Image
-                  src="/images/Arredotre.webp"
+                  src="/images/Arredo3.webp"
                   alt="Logo Arredo3"
                   width={170}
                   height={170}
