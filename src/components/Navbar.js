@@ -42,6 +42,7 @@ export default function Navbar() {
             <Link href="/" className={styles.navlink}>Home</Link>
             <Link href="/armadi" className={styles.navlink}>Armadi</Link>
             <Link href="/cucine" className={styles.navlink}>Cucine</Link>
+            <Link href="/piani" className={styles.navlink}>Piani</Link>
             <Link href="/prodotti" className={styles.navlink}>Prodotti</Link>
             <Link href="/lavori" className={styles.navlink}>Lavori</Link>
             <Link href="/contatti" className={styles.navlink}>Contatti</Link>
@@ -88,6 +89,9 @@ export default function Navbar() {
         </Link>
         <Link href="/armadi" className={styles.mobileLink} onClick={closeMenu}>
           Armadi
+        </Link>
+        <Link href="/piani" className={styles.mobileLink} onClick={closeMenu}>
+          Piani
         </Link>
         <Link href="/cucine" className={styles.mobileLink} onClick={closeMenu}>
           Cucine

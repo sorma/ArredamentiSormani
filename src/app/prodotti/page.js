@@ -53,8 +53,8 @@ export default function ProdottiPage() {
       nome: 'Piani da lavoro',
       descrizione:
         'Completiamo i progetti cucina con superfici affidabili e attuali, selezionate per offrire resistenza, pulizia formale e continuità estetica.',
-      href: '/contatti',
-      cta: 'Richiedi informazioni',
+      href: '/piani',
+      cta: 'Scopri i piani da lavoro',
       brands: [
         {
           nome: 'Solid Top',

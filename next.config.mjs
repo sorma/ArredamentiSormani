@@ -1,6 +1,14 @@
+import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare';
+
+if (process.env.NODE_ENV === 'development') {
+  await initOpenNextCloudflareForDev();
+}
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    unoptimized: true,
+  },
+};
 
 export default nextConfig;
-
-import('@opennextjs/cloudflare').then(m => m.initOpenNextCloudflareForDev());

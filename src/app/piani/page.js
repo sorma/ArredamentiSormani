@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import styles from './armadi.module.css';
+import styles from './piani.module.css';
 
 function IconCatalogo() {
   return (
@@ -46,7 +46,7 @@ function IconContatti() {
   );
 }
 
-export default function ArmadiPage() {
+export default function PianiPage() {
   const [showPage, setShowPage] = useState(false);
 
   useEffect(() => {
@@ -59,40 +59,41 @@ export default function ArmadiPage() {
 
   const brandSections = [
     {
-      nome: 'Elli',
-      logo: '/images/Elli.webp',
-      alt: 'Logo Elli',
+      nome: 'Solid Top',
+      logo: '/images/Solidtop.webp',
+      alt: 'Logo Solid Top',
       testo1:
-        'Elli progetta e produce arredi eleganti e senza tempo, con una proposta capace di valorizzare la zona notte attraverso soluzioni raffinate, pulite e coerenti.',
+        'Solid Top è un\'azienda leader nella produzione di piani da lavoro per cucina e bagno, nata dall\'esigenza di unire praticità, resistenza e un\'estetica emozionale in un prodotto innovativo e di design.',
       testo2:
-        'Il sistema armadi Elli evolve costantemente con nuove soluzioni estetiche e funzionali, grazie a una struttura modulare pensata per offrire grande flessibilità progettuale.',
+        'La profonda esperienza nella lavorazione dell\'HPL stratificato ha permesso di sviluppare una tecnologia produttiva unica, capace di affiancare allo studio dei materiali una ricerca esclusiva di finiture. La gamma si completa con superfici in Solid Surface, Corian DuPont e Betacryl.',
       punti: [
-        'Arredi eleganti e senza tempo',
-        'Flessibilità progettuale',
-        'Struttura modulare',
-        'Ricerca estetica e funzionale',
+        'HPL stratificato con spessori da 20 a 160 mm',
+        'Impermeabilità assoluta e resistenza fino a 180 °C',
+        'Piani senza giunte grazie a lastre di grande formato',
+        'Vasche integrate in HPL o acciaio inox',
+        'Solid Surface, Corian DuPont e Betacryl',
       ],
       stats: [
-        { valore: 'Zona notte', label: 'Progettata con eleganza e ordine' },
-        { valore: 'Modulare', label: 'Sistema adattabile agli spazi' },
-        { valore: 'Su misura', label: 'Soluzioni flessibili e personalizzabili' },
-        { valore: 'Ricercato', label: 'Stile sobrio e ben definito' },
+        { valore: 'HPL', label: 'Materiale tecnico ad alta resistenza' },
+        { valore: '180 °C', label: 'Temperatura massima sopportata' },
+        { valore: 'Su misura', label: 'Piani tagliati e lavorati su progetto' },
+        { valore: 'Senza giunte', label: 'Lastre di grande formato senza interruzioni' },
       ],
-      nota: 'La proposta Elli si distingue per un equilibrio tra estetica, funzionalità e continuità stilistica, ideale per chi cerca armadiature eleganti e ben integrate nell\'ambiente.',
-      linkBrand: 'https://www.ellifratelli.com/portfolio-item/armadio/',
+      nota: 'Solid Top si distingue per una produzione capace di rispondere alle esigenze del progettista e del cliente finale: materiali tecnici di altissima qualità, finiture esclusive e soluzioni personalizzate che completano ogni cucina con precisione e carattere.',
+      linkBrand: 'https://www.solid-top.com',
       cataloghi: [
         {
-          titolo: 'Collezione Armadi',
+          titolo: 'Scopri Solid Top',
           descrizione:
-            'Sfoglia la proposta completa Elli per la zona notte: ante piane, scorrevoli, cabine armadio e soluzioni interne.',
-          link: 'https://www.ellifratelli.com/portfolio-item/armadio/',
+            'Visita il sito ufficiale per conoscere la proposta completa: tipologie di piano, finiture, spessori disponibili e soluzioni con vasca integrata.',
+          link: 'https://www.solid-top.com',
           esterno: true,
           icona: 'catalogo',
         },
         {
-          titolo: 'Richiedi il catalogo',
+          titolo: 'Richiedi informazioni',
           descrizione:
-            'Passa in showroom o contattaci per ricevere il catalogo aggiornato e scoprire tutte le finiture disponibili.',
+            'Contattaci per ricevere una consulenza personalizzata e scoprire i materiali disponibili per il tuo progetto cucina.',
           link: '/contatti',
           esterno: false,
           icona: 'contatti',
@@ -100,62 +101,46 @@ export default function ArmadiPage() {
       ],
     },
     {
-      nome: 'Battistella',
-      logo: '/images/Battistella.webp',
-      alt: 'Logo Battistella',
+      nome: 'Vallmar',
+      logo: '/images/Vallmar.webp',
+      alt: 'Logo Vallmar',
       testo1:
-        'Battistella Company rappresenta una realtà strutturata dell\'arredo italiano, con un approccio progettuale articolato in più brand e una presenza internazionale consolidata.',
+        'Vallmar è un\'azienda con oltre 50 anni di esperienza nella lavorazione artigianale di marmi, graniti, pietre e onici, con sede a Meda. Un riferimento solido per chi cerca superfici naturali di qualità per la cucina e l\'arredo.',
       testo2:
-        'Il gruppo si presenta con tre proposte — Novamobili, Nidi e Cinquanta3 — offrendo una visione contemporanea dell\'abitare che risulta credibile, ordinata e ben riconoscibile anche nella zona notte.',
+        'L\'azienda unisce la tradizione familiare all\'innovazione tecnologica, offrendo piani da lavoro su misura in pietra naturale con una cura artigianale nei dettagli che si traduce in prodotti unici, durevoli e di grande valore estetico.',
       punti: [
-        'Gruppo d\'arredo strutturato',
-        'Tre brand distinti',
-        'Distribuzione internazionale',
-        'Visione contemporanea dell\'abitare',
+        'Oltre 50 anni di esperienza nella lavorazione della pietra',
+        'Marmi, graniti, pietre e onici selezionati',
+        'Lavorazione artigianale su misura',
+        'Tradizione familiare e innovazione tecnologica',
+        'Materiali di origine naturale con qualità garantita',
       ],
       stats: [
-        { valore: '3 brand', label: 'Novamobili, Nidi e Cinquanta3' },
-        { valore: '40+', label: 'Paesi raggiunti nel mondo' },
-        { valore: 'Design', label: 'Approccio attuale e coordinato' },
-        { valore: 'Affidabilità', label: 'Struttura solida e riconoscibile' },
+        { valore: '50+', label: 'Anni di esperienza artigianale' },
+        { valore: 'Naturale', label: 'Marmi, graniti, pietre e onici' },
+        { valore: 'Su misura', label: 'Ogni piano lavorato su progetto' },
+        { valore: 'Meda', label: 'Radici artigianali nel cuore della Brianza' },
       ],
-      nota: 'Battistella porta nella zona notte una proposta contemporanea e ben organizzata, adatta a chi desidera soluzioni funzionali, coerenti e capaci di dialogare con il resto della casa.',
-      linkBrand: 'https://www.battistellacompany.it/it/brand',
+      nota: 'Vallmar porta nel progetto cucina il valore della pietra naturale lavorata con cura artigianale: ogni piano è un pezzo unico, selezionato nei materiali e rifinito nei dettagli per offrire una superficie dal carattere autentico e senza tempo.',
+      linkBrand: 'https://www.vallmar.it',
       cataloghi: [
         {
-          titolo: 'Novamobili',
+          titolo: 'Scopri Vallmar',
           descrizione:
-            'Soluzioni contemporanee per armadi e zona notte, con un\'identità design chiara e ben riconoscibile.',
-          link: 'https://www.novamobili.it',
-          esterno: true,
-          icona: 'catalogo',
-        },
-        {
-          titolo: 'Nidi',
-          descrizione:
-            'Proposte fresche e funzionali per gli spazi più giovani, con un approccio colorato e attento alla praticità.',
-          link: 'https://www.nidi.it',
-          esterno: true,
-          icona: 'catalogo',
-        },
-        {
-          titolo: 'Cinquanta3',
-          descrizione:
-            'Una linea sofisticata e contemporanea che interpreta l\'arredo italiano con uno stile essenziale e ben curato.',
-          link: 'https://www.cinquanta3.it',
+            'Visita il sito ufficiale per conoscere la proposta completa di marmi, graniti e pietre naturali disponibili su misura.',
+          link: 'https://www.vallmar.it',
           esterno: true,
           icona: 'catalogo',
         },
         {
           titolo: 'Richiedi informazioni',
           descrizione:
-            'Contattaci per ricevere materiali aggiornati, scoprire le finiture disponibili e avviare un progetto personalizzato.',
+            'Contattaci per ricevere una consulenza personalizzata e scoprire i materiali disponibili per il tuo progetto cucina.',
           link: '/contatti',
           esterno: false,
           icona: 'contatti',
         },
       ],
-
     },
   ];
 
@@ -171,14 +156,15 @@ export default function ArmadiPage() {
         >
           <section className={styles.hero}>
             <h1 className={styles.title}>
-              Armadi progettati
+              Piani da lavoro
               <br />
-              per valorizzare ogni spazio
+              per ogni progetto cucina
             </h1>
 
             <p className={styles.subtitle}>
-              Soluzioni pensate per unire ordine, eleganza e funzionalità, con
-              progetti capaci di adattarsi con precisione agli ambienti della casa.
+              Superfici selezionate per completare ogni composizione con
+              materiali di qualità, finiture ricercate e soluzioni pensate per
+              durare nel tempo senza rinunciare all&apos;estetica.
             </p>
           </section>
 
@@ -192,7 +178,7 @@ export default function ArmadiPage() {
                     width={170}
                     height={170}
                     className={styles.brandLogo}
-                    priority={brand.nome === 'Elli'}
+                    priority={brand.nome === 'Solid Top'}
                   />
                 </div>
 
@@ -257,11 +243,7 @@ export default function ArmadiPage() {
                         className={styles.catalogCard}
                       >
                         <div className={styles.catalogIcon}>
-                          {cat.icona === 'contatti' ? (
-                            <IconContatti />
-                          ) : (
-                            <IconCatalogo />
-                          )}
+                          <IconCatalogo />
                         </div>
 
                         <div className={styles.catalogBody}>
