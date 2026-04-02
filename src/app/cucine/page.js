@@ -64,7 +64,7 @@ const cataloghi = [
   {
     titolo: 'Collezioni cucine',
     descrizione:
-      'Scopri tutte le linee Arredo3: moderne, classiche, minimal e su misura, con un\'ampia scelta di finiture e sistemi di apertura.',
+      "Scopri tutte le linee Arredo3: moderne, classiche, minimal e su misura, con un'ampia scelta di finiture e sistemi di apertura.",
     link: 'https://www.arredo3.com/kitchens',
     esterno: true,
   },
@@ -77,7 +77,6 @@ const cataloghi = [
   },
 ];
 
-
 export default function CucinePage() {
   const [showPage, setShowPage] = useState(false);
 
@@ -85,7 +84,6 @@ export default function CucinePage() {
     const timer = setTimeout(() => {
       setShowPage(true);
     }, 120);
-
     return () => clearTimeout(timer);
   }, []);
 
@@ -105,7 +103,6 @@ export default function CucinePage() {
               <br />
               per essere vissute
             </h1>
-
             <p className={styles.subtitle}>
               Una selezione di soluzioni pensate per unire estetica,
               funzionalità e qualità, con progetti capaci di adattarsi davvero
@@ -127,7 +124,8 @@ export default function CucinePage() {
               </div>
 
               <div className={styles.brandContent}>
-                <span className={styles.brandEyebrow}>Brand partner</span>
+                {/* ✅ MODIFICA 1: "Brand partner" → "In collaborazione" */}
+                <span className={styles.brandEyebrow}>In collaborazione</span>
 
                 <h2 className={styles.brandTitle}>Arredo3 Cucine</h2>
 
@@ -157,7 +155,6 @@ export default function CucinePage() {
                   <Link href="/contatti" className={styles.primaryLink}>
                     Richiedi una consulenza
                   </Link>
-
                   <a
                     href="https://www.arredo3.com/company"
                     target="_blank"
@@ -203,17 +200,25 @@ export default function CucinePage() {
                       <div className={styles.catalogIcon}>
                         <IconCatalogo />
                       </div>
-
                       <div className={styles.catalogBody}>
                         <span className={styles.catalogBrand}>Arredo3</span>
                         <h4 className={styles.catalogTitle}>{cat.titolo}</h4>
                         <p className={styles.catalogDesc}>{cat.descrizione}</p>
                       </div>
-
                       <div className={styles.catalogFooter}>
                         <span className={styles.catalogCta}>
                           Scopri
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            aria-hidden="true"
+                          >
                             <path d="M7 17L17 7" />
                             <path d="M7 7h10v10" />
                           </svg>
@@ -224,22 +229,30 @@ export default function CucinePage() {
                     <Link
                       key={cat.titolo}
                       href={cat.link}
-                      className={styles.catalogCard}
+                      className={`${styles.catalogCard} ${styles.catalogCardAccent}`}
                     >
-                      <div className={styles.catalogIcon}>
+                      <div className={`${styles.catalogIcon} ${styles.catalogIconAccent}`}>
                         <IconContatti />
                       </div>
-
                       <div className={styles.catalogBody}>
                         <span className={styles.catalogBrand}>Arredo3</span>
                         <h4 className={styles.catalogTitle}>{cat.titolo}</h4>
                         <p className={styles.catalogDesc}>{cat.descrizione}</p>
                       </div>
-
                       <div className={styles.catalogFooter}>
-                        <span className={styles.catalogCta}>
+                        <span className={`${styles.catalogCta} ${styles.catalogCtaAccent}`}>
                           Contattaci
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                          <svg
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            aria-hidden="true"
+                          >
                             <path d="M5 12h14" />
                             <path d="M12 5l7 7-7 7" />
                           </svg>
@@ -249,9 +262,15 @@ export default function CucinePage() {
                   )
                 )}
               </div>
-
             </div>
           </section>
+
+          {/* ✅ MODIFICA 2: disclaimer legale aggiunto */}
+          <p className={styles.disclaimer}>
+            I marchi citati sono di proprietà dei rispettivi titolari.
+            Operiamo come azienda indipendente e non siamo store ufficiali
+            dei produttori elencati.
+          </p>
         </div>
       </main>
 

@@ -265,3 +265,12 @@
     width: 100%;
   }
 }
+
+.disclaimer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #9ca3af; /* grigio chiaro, non invasivo */
+  margin-top: 3rem;
+  padding-bottom: 1rem;
+}
+

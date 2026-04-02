@@ -14,7 +14,6 @@ export default function ProdottiPage() {
     const timer = setTimeout(() => {
       setShowPage(true);
     }, 120);
-
     return () => clearTimeout(timer);
   }, []);
 
@@ -25,12 +24,7 @@ export default function ProdottiPage() {
         'Progettiamo cucine capaci di unire estetica, funzionalità e qualità dei materiali, con soluzioni studiate per adattarsi in modo armonioso a ogni ambiente.',
       href: '/cucine',
       cta: 'Scopri le cucine',
-      brands: [
-        {
-          nome: 'Arredo3',
-          logo: '/images/Arredo3.webp',
-        },
-      ],
+      brands: [{ nome: 'Arredo3', logo: '/images/Arredo3.webp' }],
     },
     {
       nome: 'Armadi',
@@ -39,14 +33,8 @@ export default function ProdottiPage() {
       href: '/armadi',
       cta: 'Scopri gli armadi',
       brands: [
-        {
-          nome: 'Elli',
-          logo: '/images/Elli.webp',
-        },
-        {
-          nome: 'Battistella',
-          logo: '/images/Battistella.webp',
-        },
+        { nome: 'Elli', logo: '/images/Elli.webp' },
+        { nome: 'Battistella', logo: '/images/Battistella.webp' },
       ],
     },
     {
@@ -56,14 +44,8 @@ export default function ProdottiPage() {
       href: '/piani',
       cta: 'Scopri i piani da lavoro',
       brands: [
-        {
-          nome: 'Solid Top',
-          logo: '/images/Solidtop.webp',
-        },
-        {
-          nome: 'Vallmar',
-          logo: '/images/Vallmar.webp',
-        },
+        { nome: 'Solid Top', logo: '/images/Solidtop.webp' },
+        { nome: 'Vallmar', logo: '/images/Vallmar.webp' },
       ],
     },
   ];
@@ -84,11 +66,11 @@ export default function ProdottiPage() {
               <br />
               per arredare con qualità
             </h1>
-
             <p className={styles.subtitle}>
-              Una selezione di aziende affidabili per cucine, armadi e piani da
-              lavoro, scelta per offrire soluzioni coerenti, eleganti e adatte a
-              diversi stili abitativi.
+              Oltre 40 anni di esperienza nel settore del mobile ci hanno
+              permesso di costruire collaborazioni solide con aziende selezionate.
+              Una proposta coerente per cucine, armadi e piani da lavoro, adatta
+              a diversi stili abitativi.
             </p>
           </section>
 
@@ -101,7 +83,9 @@ export default function ProdottiPage() {
                 </div>
 
                 <div className={styles.logoBlock}>
-                  <span className={styles.brandLabel}>Brand trattati</span>
+                  <span className={styles.brandLabel}>
+                    Le nostre collaborazioni
+                  </span>
 
                   <div className={styles.logoGrid}>
                     {categoria.brands.map((brand) => (
@@ -128,6 +112,12 @@ export default function ProdottiPage() {
               </article>
             ))}
           </section>
+
+          <p className={styles.disclaimer}>
+            I marchi citati sono di proprietà dei rispettivi titolari.
+            Operiamo come azienda indipendente e non siamo store ufficiali
+            dei produttori elencati.
+          </p>
         </div>
       </main>
 

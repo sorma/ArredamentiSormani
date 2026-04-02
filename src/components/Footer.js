@@ -16,16 +16,29 @@ export default function Footer() {
               Arredamenti Sormani
             </Link>
             <p className={styles.brandText}>
-              Soluzioni d’arredo pensate per unire estetica, funzionalità e cura
+              Soluzioni d'arredo pensate per unire estetica, funzionalità e cura
               del dettaglio in ogni ambiente della casa.
             </p>
           </div>
 
+          {/* ✅ MODIFICA: navigazione allineata alla Navbar */}
           <div className={styles.linksColumn}>
             <span className={styles.columnTitle}>Navigazione</span>
             <div className={styles.linkList}>
               <Link href="/" className={styles.footerLink}>
                 Home
+              </Link>
+              <Link href="/armadi" className={styles.footerLink}>
+                Armadi
+              </Link>
+              <Link href="/cucine" className={styles.footerLink}>
+                Cucine
+              </Link>
+              <Link href="/piani" className={styles.footerLink}>
+                Piani
+              </Link>
+              <Link href="/prodotti" className={styles.footerLink}>
+                Prodotti
               </Link>
               <Link href="/lavori" className={styles.footerLink}>
                 Lavori
@@ -50,10 +63,7 @@ export default function Footer() {
 
           <div className={styles.contactColumn}>
             <span className={styles.columnTitle}>Contatti</span>
-            <a
-              href={telUrl}
-              className={styles.contactLink}
-            >
+            <a href={telUrl} className={styles.contactLink}>
               {phone}
             </a>
             <a
@@ -69,9 +79,9 @@ export default function Footer() {
 
         <div className={styles.bottomBar}>
           <p className={styles.copy}>
-            © {new Date().getFullYear()} Arredamenti Sormani. Tutti i diritti riservati.
+            © {new Date().getFullYear()} Arredamenti Sormani — P.IVA 02177830136.
+            Tutti i diritti riservati.
           </p>
-          <p className={styles.note}>Sito vetrina</p>
         </div>
       </div>
     </footer>

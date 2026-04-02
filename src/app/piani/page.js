@@ -53,7 +53,6 @@ export default function PianiPage() {
     const timer = setTimeout(() => {
       setShowPage(true);
     }, 120);
-
     return () => clearTimeout(timer);
   }, []);
 
@@ -63,9 +62,9 @@ export default function PianiPage() {
       logo: '/images/Solidtop.webp',
       alt: 'Logo Solid Top',
       testo1:
-        'Solid Top è un\'azienda leader nella produzione di piani da lavoro per cucina e bagno, nata dall\'esigenza di unire praticità, resistenza e un\'estetica emozionale in un prodotto innovativo e di design.',
+        "Solid Top è un'azienda leader nella produzione di piani da lavoro per cucina e bagno, nata dall'esigenza di unire praticità, resistenza e un'estetica emozionale in un prodotto innovativo e di design.",
       testo2:
-        'La profonda esperienza nella lavorazione dell\'HPL stratificato ha permesso di sviluppare una tecnologia produttiva unica, capace di affiancare allo studio dei materiali una ricerca esclusiva di finiture. La gamma si completa con superfici in Solid Surface, Corian DuPont e Betacryl.',
+        "La profonda esperienza nella lavorazione dell'HPL stratificato ha permesso di sviluppare una tecnologia produttiva unica, capace di affiancare allo studio dei materiali una ricerca esclusiva di finiture. La gamma si completa con superfici in Solid Surface, Corian DuPont e Betacryl.",
       punti: [
         'HPL stratificato con spessori da 20 a 160 mm',
         'Impermeabilità assoluta e resistenza fino a 180 °C',
@@ -105,9 +104,9 @@ export default function PianiPage() {
       logo: '/images/Vallmar.webp',
       alt: 'Logo Vallmar',
       testo1:
-        'Vallmar è un\'azienda con oltre 50 anni di esperienza nella lavorazione artigianale di marmi, graniti, pietre e onici, con sede a Meda. Un riferimento solido per chi cerca superfici naturali di qualità per la cucina e l\'arredo.',
+        "Vallmar è un'azienda con oltre 50 anni di esperienza nella lavorazione artigianale di marmi, graniti, pietre e onici, con sede a Meda. Un riferimento solido per chi cerca superfici naturali di qualità per la cucina e l'arredo.",
       testo2:
-        'L\'azienda unisce la tradizione familiare all\'innovazione tecnologica, offrendo piani da lavoro su misura in pietra naturale con una cura artigianale nei dettagli che si traduce in prodotti unici, durevoli e di grande valore estetico.',
+        "L'azienda unisce la tradizione familiare all'innovazione tecnologica, offrendo piani da lavoro su misura in pietra naturale con una cura artigianale nei dettagli che si traduce in prodotti unici, durevoli e di grande valore estetico.",
       punti: [
         'Oltre 50 anni di esperienza nella lavorazione della pietra',
         'Marmi, graniti, pietre e onici selezionati',
@@ -160,7 +159,6 @@ export default function PianiPage() {
               <br />
               per ogni progetto cucina
             </h1>
-
             <p className={styles.subtitle}>
               Superfici selezionate per completare ogni composizione con
               materiali di qualità, finiture ricercate e soluzioni pensate per
@@ -183,7 +181,8 @@ export default function PianiPage() {
                 </div>
 
                 <div className={styles.brandContent}>
-                  <span className={styles.brandEyebrow}>Brand partner</span>
+                  {/* ✅ MODIFICA 1: "Brand partner" → "In collaborazione" */}
+                  <span className={styles.brandEyebrow}>In collaborazione</span>
 
                   <h2 className={styles.brandTitle}>{brand.nome}</h2>
 
@@ -203,7 +202,6 @@ export default function PianiPage() {
                     <Link href="/contatti" className={styles.primaryLink}>
                       Richiedi una consulenza
                     </Link>
-
                     <a
                       href={brand.linkBrand}
                       target="_blank"
@@ -245,13 +243,11 @@ export default function PianiPage() {
                         <div className={styles.catalogIcon}>
                           <IconCatalogo />
                         </div>
-
                         <div className={styles.catalogBody}>
                           <span className={styles.catalogBrand}>{brand.nome}</span>
                           <h4 className={styles.catalogTitle}>{cat.titolo}</h4>
                           <p className={styles.catalogDesc}>{cat.descrizione}</p>
                         </div>
-
                         <div className={styles.catalogFooter}>
                           <span className={styles.catalogCta}>
                             Scopri
@@ -281,13 +277,11 @@ export default function PianiPage() {
                         <div className={`${styles.catalogIcon} ${styles.catalogIconAccent}`}>
                           <IconContatti />
                         </div>
-
                         <div className={styles.catalogBody}>
                           <span className={styles.catalogBrand}>{brand.nome}</span>
                           <h4 className={styles.catalogTitle}>{cat.titolo}</h4>
                           <p className={styles.catalogDesc}>{cat.descrizione}</p>
                         </div>
-
                         <div className={styles.catalogFooter}>
                           <span className={`${styles.catalogCta} ${styles.catalogCtaAccent}`}>
                             Contattaci
@@ -314,6 +308,13 @@ export default function PianiPage() {
               </div>
             </section>
           ))}
+
+          {/* ✅ MODIFICA 2: disclaimer legale aggiunto */}
+          <p className={styles.disclaimer}>
+            I marchi citati sono di proprietà dei rispettivi titolari.
+            Operiamo come azienda indipendente e non siamo store ufficiali
+            dei produttori elencati.
+          </p>
         </div>
       </main>
 

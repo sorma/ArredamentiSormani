@@ -439,5 +439,12 @@
   .catalogCtaAccent {
     color: #a97b58;
   }
-
 }
+.disclaimer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 3rem;
+  padding-bottom: 1rem;
+}
+

@@ -53,7 +53,6 @@ export default function ArmadiPage() {
     const timer = setTimeout(() => {
       setShowPage(true);
     }, 120);
-
     return () => clearTimeout(timer);
   }, []);
 
@@ -78,7 +77,7 @@ export default function ArmadiPage() {
         { valore: 'Su misura', label: 'Soluzioni flessibili e personalizzabili' },
         { valore: 'Ricercato', label: 'Stile sobrio e ben definito' },
       ],
-      nota: 'La proposta Elli si distingue per un equilibrio tra estetica, funzionalità e continuità stilistica, ideale per chi cerca armadiature eleganti e ben integrate nell\'ambiente.',
+      nota: "La proposta Elli si distingue per un equilibrio tra estetica, funzionalità e continuità stilistica, ideale per chi cerca armadiature eleganti e ben integrate nell'ambiente.",
       linkBrand: 'https://www.ellifratelli.com/portfolio-item/armadio/',
       cataloghi: [
         {
@@ -104,14 +103,14 @@ export default function ArmadiPage() {
       logo: '/images/Battistella.webp',
       alt: 'Logo Battistella',
       testo1:
-        'Battistella Company rappresenta una realtà strutturata dell\'arredo italiano, con un approccio progettuale articolato in più brand e una presenza internazionale consolidata.',
+        "Battistella Company rappresenta una realtà strutturata dell'arredo italiano, con un approccio progettuale articolato in più brand e una presenza internazionale consolidata.",
       testo2:
         'Il gruppo si presenta con tre proposte — Novamobili, Nidi e Cinquanta3 — offrendo una visione contemporanea dell\'abitare che risulta credibile, ordinata e ben riconoscibile anche nella zona notte.',
       punti: [
-        'Gruppo d\'arredo strutturato',
+        "Gruppo d'arredo strutturato",
         'Tre brand distinti',
         'Distribuzione internazionale',
-        'Visione contemporanea dell\'abitare',
+        "Visione contemporanea dell'abitare",
       ],
       stats: [
         { valore: '3 brand', label: 'Novamobili, Nidi e Cinquanta3' },
@@ -119,13 +118,13 @@ export default function ArmadiPage() {
         { valore: 'Design', label: 'Approccio attuale e coordinato' },
         { valore: 'Affidabilità', label: 'Struttura solida e riconoscibile' },
       ],
-      nota: 'Battistella porta nella zona notte una proposta contemporanea e ben organizzata, adatta a chi desidera soluzioni funzionali, coerenti e capaci di dialogare con il resto della casa.',
+      nota: "Battistella porta nella zona notte una proposta contemporanea e ben organizzata, adatta a chi desidera soluzioni funzionali, coerenti e capaci di dialogare con il resto della casa.",
       linkBrand: 'https://www.battistellacompany.it/it/brand',
       cataloghi: [
         {
           titolo: 'Novamobili',
           descrizione:
-            'Soluzioni contemporanee per armadi e zona notte, con un\'identità design chiara e ben riconoscibile.',
+            "Soluzioni contemporanee per armadi e zona notte, con un'identità design chiara e ben riconoscibile.",
           link: 'https://www.novamobili.it',
           esterno: true,
           icona: 'catalogo',
@@ -141,7 +140,7 @@ export default function ArmadiPage() {
         {
           titolo: 'Cinquanta3',
           descrizione:
-            'Una linea sofisticata e contemporanea che interpreta l\'arredo italiano con uno stile essenziale e ben curato.',
+            "Una linea sofisticata e contemporanea che interpreta l'arredo italiano con uno stile essenziale e ben curato.",
           link: 'https://www.cinquanta3.it',
           esterno: true,
           icona: 'catalogo',
@@ -155,7 +154,6 @@ export default function ArmadiPage() {
           icona: 'contatti',
         },
       ],
-
     },
   ];
 
@@ -175,7 +173,6 @@ export default function ArmadiPage() {
               <br />
               per valorizzare ogni spazio
             </h1>
-
             <p className={styles.subtitle}>
               Soluzioni pensate per unire ordine, eleganza e funzionalità, con
               progetti capaci di adattarsi con precisione agli ambienti della casa.
@@ -197,7 +194,8 @@ export default function ArmadiPage() {
                 </div>
 
                 <div className={styles.brandContent}>
-                  <span className={styles.brandEyebrow}>Brand partner</span>
+                  {/* ✅ MODIFICA 1: "Brand partner" → "In collaborazione" */}
+                  <span className={styles.brandEyebrow}>In collaborazione</span>
 
                   <h2 className={styles.brandTitle}>{brand.nome}</h2>
 
@@ -217,7 +215,6 @@ export default function ArmadiPage() {
                     <Link href="/contatti" className={styles.primaryLink}>
                       Richiedi una consulenza
                     </Link>
-
                     <a
                       href={brand.linkBrand}
                       target="_blank"
@@ -263,13 +260,11 @@ export default function ArmadiPage() {
                             <IconCatalogo />
                           )}
                         </div>
-
                         <div className={styles.catalogBody}>
                           <span className={styles.catalogBrand}>{brand.nome}</span>
                           <h4 className={styles.catalogTitle}>{cat.titolo}</h4>
                           <p className={styles.catalogDesc}>{cat.descrizione}</p>
                         </div>
-
                         <div className={styles.catalogFooter}>
                           <span className={styles.catalogCta}>
                             Scopri
@@ -299,13 +294,11 @@ export default function ArmadiPage() {
                         <div className={`${styles.catalogIcon} ${styles.catalogIconAccent}`}>
                           <IconContatti />
                         </div>
-
                         <div className={styles.catalogBody}>
                           <span className={styles.catalogBrand}>{brand.nome}</span>
                           <h4 className={styles.catalogTitle}>{cat.titolo}</h4>
                           <p className={styles.catalogDesc}>{cat.descrizione}</p>
                         </div>
-
                         <div className={styles.catalogFooter}>
                           <span className={`${styles.catalogCta} ${styles.catalogCtaAccent}`}>
                             Contattaci
@@ -332,6 +325,13 @@ export default function ArmadiPage() {
               </div>
             </section>
           ))}
+
+          {/* ✅ MODIFICA 2: disclaimer legale aggiunto */}
+          <p className={styles.disclaimer}>
+            I marchi citati sono di proprietà dei rispettivi titolari.
+            Operiamo come azienda indipendente e non siamo store ufficiali
+            dei produttori elencati.
+          </p>
         </div>
       </main>
 
