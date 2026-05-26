@@ -98,63 +98,6 @@ export default function ArmadiPage() {
         },
       ],
     },
-    {
-      nome: 'Battistella',
-      logo: '/images/Battistella.webp',
-      alt: 'Logo Battistella',
-      testo1:
-        "Battistella Company rappresenta una realtà strutturata dell'arredo italiano, con un approccio progettuale articolato in più brand e una presenza internazionale consolidata.",
-      testo2:
-        'Il gruppo si presenta con tre proposte — Novamobili, Nidi e Cinquanta3 — offrendo una visione contemporanea dell\'abitare che risulta credibile, ordinata e ben riconoscibile anche nella zona notte.',
-      punti: [
-        "Gruppo d'arredo strutturato",
-        'Tre brand distinti',
-        'Distribuzione internazionale',
-        "Visione contemporanea dell'abitare",
-      ],
-      stats: [
-        { valore: '3 brand', label: 'Novamobili, Nidi e Cinquanta3' },
-        { valore: '40+', label: 'Paesi raggiunti nel mondo' },
-        { valore: 'Design', label: 'Approccio attuale e coordinato' },
-        { valore: 'Affidabilità', label: 'Struttura solida e riconoscibile' },
-      ],
-      nota: "Battistella porta nella zona notte una proposta contemporanea e ben organizzata, adatta a chi desidera soluzioni funzionali, coerenti e capaci di dialogare con il resto della casa.",
-      linkBrand: 'https://www.battistellacompany.it/it/brand',
-      cataloghi: [
-        {
-          titolo: 'Novamobili',
-          descrizione:
-            "Soluzioni contemporanee per armadi e zona notte, con un'identità design chiara e ben riconoscibile.",
-          link: 'https://www.novamobili.it',
-          esterno: true,
-          icona: 'catalogo',
-        },
-        {
-          titolo: 'Nidi',
-          descrizione:
-            'Proposte fresche e funzionali per gli spazi più giovani, con un approccio colorato e attento alla praticità.',
-          link: 'https://www.nidi.it',
-          esterno: true,
-          icona: 'catalogo',
-        },
-        {
-          titolo: 'Cinquanta3',
-          descrizione:
-            "Una linea sofisticata e contemporanea che interpreta l'arredo italiano con uno stile essenziale e ben curato.",
-          link: 'https://www.cinquanta3.it',
-          esterno: true,
-          icona: 'catalogo',
-        },
-        {
-          titolo: 'Richiedi informazioni',
-          descrizione:
-            'Contattaci per ricevere materiali aggiornati, scoprire le finiture disponibili e avviare un progetto personalizzato.',
-          link: '/contatti',
-          esterno: false,
-          icona: 'contatti',
-        },
-      ],
-    },
   ];
 
   return (

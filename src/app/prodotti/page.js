@@ -34,7 +34,6 @@ export default function ProdottiPage() {
       cta: 'Scopri gli armadi',
       brands: [
         { nome: 'Elli', logo: '/images/Elli.webp' },
-        { nome: 'Battistella', logo: '/images/Battistella.webp' },
       ],
     },
     {
